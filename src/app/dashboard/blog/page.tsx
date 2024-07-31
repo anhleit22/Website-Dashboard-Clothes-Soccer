@@ -1,27 +1,35 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import EditorBlog from '@/components/editor/EditorBlog';
 import { Card } from '@mantine/core';
 import ListBlog from '@/components/ListBlog';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { useRouter } from 'next/navigation';
+
 import { PATH_AUTH } from '@/routes/path';
+import { useRouter } from 'next/navigation';
 
 const DashboardBlog = () => {
+  const [user, setUser] = useState<any>(null);
   const auth = getAuth();
   const router = useRouter();
+
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log('Cho đăng nhập');
+        setUser(user);
       } else {
-        console.log('không cho đăng nhập');
         router.push(PATH_AUTH.login);
       }
     });
-  }, []);
+
+    return () => unsubscribe();
+  }, [auth, router]);
+
+  if (!user) {
+    return null;
+  }
   return (
-    <div className='px-4'>
+    <div className=' px-4'>
       <Card className='m-4 min-h-[70vh] p-6'>
         <EditorBlog />
       </Card>

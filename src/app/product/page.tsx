@@ -6,22 +6,13 @@ import { ProductionItem } from '@/components/product/Product';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '@/firebaseConfig';
 import { useSearchParams } from 'next/navigation';
-const page = () => {
+const Product = () => {
   const [dataInFirebase, setDataInFirebase] = useState<any>();
   const searchParams = useSearchParams();
 
   const search = searchParams?.get('q');
   useEffect(() => {
     const fetchData = async () => {
-      //search bằng array
-      // const filterProducts = (
-      //   items: any,
-      //   searchValue: string | null | undefined
-      // ): any =>
-      //   items.filter((item: any) =>
-      //     item.title.toLowerCase().includes(searchValue?.toLowerCase())
-      //   );
-      // datas = filterProducts(dataInFirebase, search);
       let reference;
       if (search) {
         reference = query(
@@ -60,4 +51,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Product;

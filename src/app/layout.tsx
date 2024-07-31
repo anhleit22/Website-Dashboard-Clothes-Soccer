@@ -3,6 +3,7 @@ import '../styles/globals.css';
 import LayoutDefault from '@/components/layout/LayoutDefault.tsx/LayoutDefault';
 import { MantineProvider, createTheme } from '@mantine/core';
 import StoreProvider from '@/app/StoreProvider';
+import { Suspense } from 'react';
 
 export const metadata = {
   title: 'Next.js',
@@ -23,11 +24,13 @@ export default function RootLayout({
       <SessionWrapper>
         <html lang='en'>
           <body suppressHydrationWarning={false}>
-            <div className='flex justify-center overflow-x-hidden'>
-              <MantineProvider theme={theme}>
-                <LayoutDefault>{children}</LayoutDefault>
-              </MantineProvider>
-            </div>
+            <Suspense>
+              <div className='flex justify-center overflow-x-hidden'>
+                <MantineProvider theme={theme}>
+                  <LayoutDefault>{children}</LayoutDefault>
+                </MantineProvider>
+              </div>
+            </Suspense>
           </body>
         </html>
       </SessionWrapper>

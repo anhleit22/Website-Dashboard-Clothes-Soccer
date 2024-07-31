@@ -64,7 +64,7 @@ const ProducItemDashboard = () => {
   }, []);
 
   return (
-    <Card className='relative'>
+    <Card className='relative min-h-[70vh]'>
       <TextHeader>All Product</TextHeader>
       <Grid className='mt-[20px]'>
         {dataInFirebase?.map((item?: any) => (

@@ -22,12 +22,13 @@ import { createSlug } from '@/components/func/createSlug';
 
 function EditorBlog() {
   const avatar = useSelector((state: RootState) => state.avatar);
-  const editor = useCreateBlockNote();
   const [html, setHTML] = useState<string>('');
+  const editor = useCreateBlockNote();
   const onChange = async () => {
     const html = await editor.blocksToHTMLLossy(editor.document);
     setHTML(html);
   };
+
   const LoginSchema = Yup.object().shape({
     nameBlog: Yup.string().required('Nhập tên vào'),
     introBlog: Yup.string().required('Nhập Intro vào'),
