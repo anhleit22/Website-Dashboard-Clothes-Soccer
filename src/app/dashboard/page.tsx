@@ -75,7 +75,14 @@ const Page = () => {
           </Grid.Col>
           <Grid.Col span={4}>
             <Card className='min-h-[40vh]'>
-              <HeaderTag> Danh sách blog</HeaderTag>
+              <Text
+                fw={900}
+                variant='gradient'
+                gradient={{ from: 'rgba(255, 0, 0, 1)', to: 'gray', deg: 90 }}
+                className='mx-3 text-[26px]'
+              >
+                Blog
+              </Text>
               <ListBlog modified />
             </Card>
           </Grid.Col>
