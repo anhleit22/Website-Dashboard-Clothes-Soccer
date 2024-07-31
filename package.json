@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@blocknote/core": "^0.12.4",
-    "@blocknote/react": "^0.12.4",
     "@coreui/coreui": "^4.3.2",
     "@emotion/react": "^11.11.3",
     "@firebase/auth": "^1.7.4",
