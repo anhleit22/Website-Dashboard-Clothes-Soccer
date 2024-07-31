@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '@blocknote/core/fonts/inter.css';
-import { BlockNoteView, useCreateBlockNote } from '@blocknote/react';
+import { useCreateBlockNote } from '@blocknote/react';
 
 import '@blocknote/react/style.css';
 import TextHeader from '@/components/TextHeader';
@@ -16,7 +16,9 @@ import { RootState } from '@/lib/store';
 import { useSelector } from 'react-redux';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '@/firebaseConfig';
-import { createSlug } from '@/components/func';
+
+import { BlockNoteView } from '@blocknote/mantine';
+import { createSlug } from '@/components/func/createSlug';
 
 function EditorBlog() {
   const avatar = useSelector((state: RootState) => state.avatar);
@@ -43,7 +45,7 @@ function EditorBlog() {
     resolver: yupResolver<any>(LoginSchema),
     defaultValues,
   });
-  
+
   const { reset, handleSubmit } = methods;
 
   const onSubmit = async (data: valueContent) => {
@@ -98,7 +100,7 @@ function EditorBlog() {
         <div className='mt-[10px]'>
           <BlockNoteView editor={editor} onChange={onChange} />
         </div>
-        <div className='bottom-3'>
+        <div className='absolute bottom-3'>
           <PrimaryButton type='submit' text='Đăng Bài' className='mt-3' />
         </div>
       </FormProvider>

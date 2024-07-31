@@ -18,6 +18,7 @@ import CurrentOrder from '@/components/component/CurrentOrder';
 import LabelBuyProduct from '@/components/component/LabelBuyProduct';
 import { labelproductbuy } from '@/components/mock-data';
 import ListBlog from '@/components/ListBlog';
+import HeaderTag from '@/components/HeaderTag';
 
 const Page = () => {
   const auth = getAuth();
@@ -68,12 +69,13 @@ const Page = () => {
             </Card>
           </Grid.Col>
           <Grid.Col span={4}>
-            <Card>
+            <Card className='h-[100%]'>
               <CurrentOrder />
             </Card>
           </Grid.Col>
           <Grid.Col span={4}>
-            <Card className='min-h-fit'>
+            <Card className='min-h-[40vh]'>
+              <HeaderTag> Danh sách blog</HeaderTag>
               <ListBlog modified />
             </Card>
           </Grid.Col>

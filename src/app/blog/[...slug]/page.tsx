@@ -7,7 +7,6 @@ import TextHeader from '@/components/TextHeader';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { usePathname } from 'next/navigation';
 import { db } from '@/firebaseConfig';
-import { useCreateBlockNote } from '@blocknote/react';
 import HtmlConvert from '@/components/HtmlConvert';
 
 type Blog = {
@@ -30,7 +29,6 @@ const page = () => {
   });
   const pathname = usePathname();
   const slugProduct = pathname?.replace('/blog/', '');
-  console.log(slugProduct);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +45,6 @@ const page = () => {
     };
     fetchData();
   }, []);
-  const editor = useCreateBlockNote();
 
   return (
     <div className=''>
@@ -69,7 +66,7 @@ const page = () => {
           <Text
             size='xl'
             lineClamp={4}
-            className='mt-[20px] border-b-2 pb-[20px] h'
+            className='h mt-[20px] border-b-2 pb-[20px]'
           >
             <Image
               radius='md'

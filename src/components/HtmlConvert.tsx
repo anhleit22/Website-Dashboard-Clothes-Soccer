@@ -1,9 +1,11 @@
-import { BlockNoteView, useCreateBlockNote } from '@blocknote/react';
+import { BlockNoteView } from '@blocknote/mantine';
+import { useCreateBlockNote } from '@blocknote/react';
 import React, { useEffect } from 'react';
 
 const HtmlConvert = ({ html }: { html: string }) => {
   const editor = useCreateBlockNote();
   const initialHTML = html || '';
+
   useEffect(() => {
     async function loadInitialHTML() {
       const blocks = await editor.tryParseHTMLToBlocks(initialHTML);

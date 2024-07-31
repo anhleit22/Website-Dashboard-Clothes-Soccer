@@ -13,8 +13,9 @@ import { db } from '@/firebaseConfig';
 import RHFInputPicture from '@/components/hook-form/RHFInputPicture';
 import { collection, addDoc } from 'firebase/firestore';
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
-import { createSlug } from '@/components/func';
+
 import { Value } from '@/app/dashboard/productitem/page';
+import { createSlug } from '@/components/func/createSlug';
 
 export const uploadAndReturnDownloadUrl = async (
   storage: any,
