@@ -1,0 +1,13 @@
+@layer tailwind {
+  @tailwind base;
+}
+@tailwind components;
+@tailwind utilities;
+@import '@mantine/core/styles.css';
+@import '@mantine/dates/styles.css';
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
