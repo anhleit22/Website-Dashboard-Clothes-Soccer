@@ -91,16 +91,7 @@ const Login = () => {
                 </Link>
               </Flex>
               <Flex direction='column' gap={16} mb={rem(80)}>
-                <RHFTextField
-                  name='email'
-                  placeholder='Email'
-                  sx={{
-                    '& input': {
-                      height: rem(55),
-                      borderRadius: rem(8),
-                    },
-                  }}
-                />
+                <RHFTextField name='email' placeholder='Email' />
                 <RHFPasswordField
                   name='password'
                   placeholder='Mật khẩu'

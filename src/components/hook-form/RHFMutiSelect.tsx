@@ -39,11 +39,6 @@ export default function RHFMutiSelect(props: RHFInputAutoCompleteProps) {
           <Input.Wrapper
             className='!outline-primary'
             {...field}
-            sx={{
-              '.mantine-InputWrapper-error': {
-                paddingTop: '5px',
-              },
-            }}
             error={error ? error.message : props.helperText}
           >
             <div
@@ -58,10 +53,8 @@ export default function RHFMutiSelect(props: RHFInputAutoCompleteProps) {
                 <MultiSelect
                   value={props.value as string[]}
                   searchable
-                  creatable={props.creatable}
                   size='md'
                   data={props.options || []}
-                  getCreateLabel={(query) => `${query}`}
                   onChange={(value) => {
                     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                     props.setValue && props.setValue(value);

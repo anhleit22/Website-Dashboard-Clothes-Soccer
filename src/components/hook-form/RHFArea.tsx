@@ -1,5 +1,4 @@
 // @mui
-import type { Sx } from '@mantine/core';
 import { Textarea } from '@mantine/core';
 import { Controller, useFormContext } from 'react-hook-form';
 
@@ -9,7 +8,6 @@ type Props = {
   name: string;
   helperText?: string;
   placeholder?: string;
-  sx?: Sx | (Sx | undefined)[];
   className?: string;
   label?: string;
 };

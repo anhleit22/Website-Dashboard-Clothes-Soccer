@@ -23,7 +23,7 @@ const DashboardBlog = () => {
   return (
     <div className='px-4'>
       <Card className='m-4 p-6'>
-        <ListBlog />
+        <ListBlog modified />
       </Card>
       <Card className='m-4 p-6'>
         <EditorBlog />
